@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpSession;
 
 /**
  *
- * @author GIA KHANH
+ * @author HOANG HAI
  */
 public class LoginFilter implements Filter {
     

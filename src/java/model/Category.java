@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author GIA KHANH
+ * @author HOANG HAI
  */
 public class Category {
     private int categoryId;
