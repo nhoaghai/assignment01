@@ -90,6 +90,7 @@ public class PurchaseDao extends DBContext {
         }
         return list;
     }
+    
     public List<Purchase> getAllPurchase() {
         List<Purchase> list = new ArrayList<>();
         String sql = "select * from purchase";
@@ -118,12 +119,5 @@ public class PurchaseDao extends DBContext {
         } catch (Exception e) {
             System.out.println(e);
         }
-    }
-
-    public static void main(String[] args) {
-        PurchaseDao purchaseDao = new PurchaseDao();
-        List<Purchase> list = purchaseDao.getAllPurchase();
-        System.out.println(list);
-
     }
 }

@@ -29,13 +29,9 @@
     </head>
     <body>
         <%@include file="header.jsp" %>
-
-
         <c:if test="${requestScope.listpurchase.isEmpty()}">
             <div id="no-purchase-message"><h2>You have not purchased any orders yet</h2></div>
         </c:if>
-
-
             <div class="container">
                 <table class="table table-bordered table-striped">
                     <thead class="table-dark">

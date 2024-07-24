@@ -64,7 +64,7 @@ public class OrdersDao extends DBContext {
         }
     }
    
-     public void deleteOrdersByPurchaseId(int pid) {
+    public void deleteOrdersByPurchaseId(int pid) {
         String sql = "delete from orders\n"
                 + "  where purchase_id = ?";
         try {
@@ -74,11 +74,5 @@ public class OrdersDao extends DBContext {
         } catch (Exception e) {
             System.out.println(e);
         }
-    }
-    
-    public static void main(String[] args) {
-        OrdersDao o = new OrdersDao();
-        List<Orders> or = o.getAllOrderByPuchaseId("2");
-        System.out.println(or);
     }
 }

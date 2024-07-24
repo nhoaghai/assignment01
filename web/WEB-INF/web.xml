@@ -228,6 +228,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditUser</servlet-name>
+        
         <url-pattern>/editU</url-pattern>
     </servlet-mapping>
     <servlet-mapping>

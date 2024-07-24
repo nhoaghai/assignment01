@@ -53,5 +53,4 @@ public class Home extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

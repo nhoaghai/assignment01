@@ -23,32 +23,33 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div id="content" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                        <c:forEach items="${listP}" var="o">
+                        <c:forEach items="${listP}" var="p">
                             <div class="product col mb-5">
                                 <div class="card h-100">
                                     <!-- Product image-->
-                                    <img class="card-img-top" src="${o.image}" alt="..." />
+                                    <img class="card-img-top" src="${p.image}" alt="..." style="height: 255px"/>
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">
                                             <!-- Product name-->
-                                            <h5 class="fw-bolder">${o.productName}</h5>
+                                            <h5 class="fw-bolder">${p.productName}</h5>
                                             <!-- Product price-->
-                                            ${o.unitPrice}
+                                            <p>Price: ${p.unitPrice}$</p>
+                                            <p>Stock: ${p.stock}</p>
                                         </div>
                                     </div>
                                     <!-- Product actions-->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent d-flex justify-content-between">
                                         <div class="text-center">
-                                            <a class="btn btn-outline-success" href="detail?pid=${o.productId}">View detail</a>
+                                            <a class="btn btn-outline-success" href="detail?pid=${p.productId}">View detail</a>
                                         </div>
-                                        <c:if test="${o.stock == 0}">
+                                        <c:if test="${p.stock == 0}">
                                             <a class="btn btn-outline-danger">Out of stock</a>
                                         </c:if>
                                         <c:if test="${acc.role == 2 || acc == null}">
-                                            <c:if test="${o.stock > 0}">
+                                            <c:if test="${p.stock > 0}">
                                                 <div class="text-center">
-                                                    <a class="btn btn-outline-info" href="add-to-cart?id=${o.productId}">Add to cart</a>
+                                                    <a class="btn btn-outline-info" href="add-to-cart?id=${p.productId}">Add to cart</a>
                                                 </div>
                                             </c:if>
                                         </c:if>

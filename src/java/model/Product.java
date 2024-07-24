@@ -4,7 +4,6 @@
  */
 package model;
 
-import java.awt.Image;
 
 /**
  *
@@ -102,6 +101,4 @@ public class Product {
     public String toString() {
         return "Product{" + "productId=" + productId + ", productName=" + productName + ", stock=" + stock + ", unitPrice=" + unitPrice + ", description=" + description + ", image=" + image + ", categoryId=" + categoryId + '}';
     }
-
-    
 }

@@ -171,12 +171,4 @@ public class UserDao extends DBContext {
         }
         return null;
     }
-
-    public static void main(String[] args) {
-        UserDao ud = new UserDao();
-//        ud.updateUser("giakhanhpro9x", "giakhanh27403@gmail.com", "Long Bien, Ha Noi", "0372454714", "2");
-//        ud.deleteUser("2");
-        Users u = ud.checkDuplicateUserName("giakhanh");
-        System.out.println(u);
-    }
 }

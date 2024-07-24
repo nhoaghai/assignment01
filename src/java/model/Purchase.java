@@ -61,8 +61,6 @@ public class Purchase {
     public String toString() {
         return "Purchase{" + "id=" + purchaseId + ", user=" + user + ", total=" + total + ", date=" + date + '}';
     }
-
-  
 }
    
 

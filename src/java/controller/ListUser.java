@@ -40,7 +40,6 @@ public class ListUser extends HttpServlet {
         int index = Integer.parseInt(indexPage);
 
         UserDao dao = new UserDao();
-        CategoryDao cDao = new CategoryDao();
         int count = dao.getTotalUser();
         int endPage = count / 4;
         if (count % 4 != 0) {
@@ -52,9 +51,7 @@ public class ListUser extends HttpServlet {
         request.setAttribute("listU", list);
         request.setAttribute("endP", endPage);
         request.setAttribute("tag", index);
-        List<Category> listC = cDao.getAllCategory();
 
-        request.setAttribute("listC", listC);
         request.getRequestDispatcher("manageruser.jsp")
                 .forward(request, response);
     }

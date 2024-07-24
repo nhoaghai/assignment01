@@ -64,7 +64,7 @@ public class AddToPurchase extends HttpServlet {
                 // update stock product
                 int stockP = order.getProduct().getStock()- order.getQuantity();
                 order.getProduct().setStock(stockP);
-                p.updateQuantityProduct(stockP, order.getProduct().getProductId());
+                p.updateProductStock(stockP, order.getProduct().getProductId());
             }
 
             ///cap nhat lai bill de co tong gia tien

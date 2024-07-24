@@ -42,8 +42,7 @@ public class LoginDao extends DBContext {
     }
 
     public Users checkDuplicateUser(Users user) {
-        String sql = "select * from users\n"
-                + "where user_name = ?";
+        String sql = "select * from users where user_name = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, user.getUserName());
@@ -67,8 +66,7 @@ public class LoginDao extends DBContext {
     }
     
      public Users checkDuplicatePhone(Users user) {
-        String sql = "select * from users\n"
-                + "where phone = ?";
+        String sql = "select * from users where phone = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, user.getPhone());
@@ -92,8 +90,7 @@ public class LoginDao extends DBContext {
     }
      
       public Users checkDuplicateEmail(Users user) {
-        String sql = "select * from users\n"
-                + "where email = ?";
+        String sql = "select * from users where email = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, user.getEmail());
@@ -119,7 +116,6 @@ public class LoginDao extends DBContext {
 
     public void register(Users users) {
         String sql = "insert into users(user_name, password, email, full_name, phone, address, image) values(?, ?, ?, ?, ?, ?, ?)";
-
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, users.getUserName());
@@ -134,5 +130,4 @@ public class LoginDao extends DBContext {
             System.out.println(e);
         }
     }
-    
 }

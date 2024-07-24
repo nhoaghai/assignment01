@@ -7,6 +7,9 @@
         <title>Teddy Bear King</title>
 
         <style>
+            body{
+                background-color: #d9edf7;
+            }
             /* Customize the background color */
             .jumbotron {
                 background-color: #your-color;

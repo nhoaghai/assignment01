@@ -121,12 +121,11 @@ public class AuthorizationFilter implements Filter {
         Throwable problem = null;
         try {
             chain.doFilter(request, response);
-        } catch (Throwable t) {
+        } catch (ServletException | IOException t) {
             // If an exception is thrown somewhere down the filter chain,
             // we still want to execute our after processing, and then
             // rethrow the problem after that.
             problem = t;
-            t.printStackTrace();
         }
 
         doAfterProcessing(request, response);
@@ -194,7 +193,6 @@ public class AuthorizationFilter implements Filter {
 
     private void sendProcessingError(Throwable t, ServletResponse response) {
         String stackTrace = getStackTrace(t);
-
         if (stackTrace != null && !stackTrace.equals("")) {
             try {
                 response.setContentType("text/html");
@@ -209,7 +207,7 @@ public class AuthorizationFilter implements Filter {
                 pw.close();
                 ps.close();
                 response.getOutputStream().close();
-            } catch (Exception ex) {
+            } catch (IOException ex) {
             }
         } else {
             try {
@@ -217,7 +215,7 @@ public class AuthorizationFilter implements Filter {
                 t.printStackTrace(ps);
                 ps.close();
                 response.getOutputStream().close();
-            } catch (Exception ex) {
+            } catch (IOException ex) {
             }
         }
     }
@@ -231,7 +229,7 @@ public class AuthorizationFilter implements Filter {
             pw.close();
             sw.close();
             stackTrace = sw.getBuffer().toString();
-        } catch (Exception ex) {
+        } catch (IOException ex) {
         }
         return stackTrace;
     }
@@ -239,5 +237,4 @@ public class AuthorizationFilter implements Filter {
     public void log(String msg) {
         filterConfig.getServletContext().log(msg);
     }
-
 }

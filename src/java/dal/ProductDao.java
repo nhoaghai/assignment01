@@ -58,7 +58,7 @@ public class ProductDao extends DBContext {
 
     public List<Product> getNext4Product(int amount) {
         List<Product> list = new ArrayList<>();
-        String sql = "SELECT * from product as order by product_id asc limit 4 offset ?";
+        String sql = "SELECT * from product order by product_id asc limit 4 offset ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, amount);
@@ -268,7 +268,7 @@ public class ProductDao extends DBContext {
         return list;
     }
 
-    public void updateQuantityProduct(int stock, int productId) {
+    public void updateProductStock(int stock, int productId) {
         String sql = " update product set stock = ? where product_id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -278,10 +278,5 @@ public class ProductDao extends DBContext {
         } catch (Exception e) {
             System.out.println(e);
         }
-    }
-    
-    public static void main(String[] args) {
-        ProductDao d = new ProductDao();
-        System.out.println(d.searchProductByPrice(10));
     }
 }

@@ -10,9 +10,6 @@
         <title>Quản lý đơn hàng</title>
 
         <style>
-            body {
-            }
-
             .nav a {
                 text-decoration: none;
                 color: black;
@@ -33,18 +30,12 @@
                 margin-bottom: 20px;
             }
         </style>
-
     </head>
-
-
     <body>
         <%@include file="header.jsp" %>
 
         <div class="container margintopandbottom">
-
-
             <center>
-
                 <c:if test="${requestScope.listpurchase == null}">
                     <div id="no-purchase-message"><h2>No one has bought yet</h2></div>
                 </c:if>
@@ -81,10 +72,7 @@
                     </table>
                 </c:if>
             </center>
-
         </div>
         <%@include file="footer.jsp" %>
     </body>
-
-
 </html>

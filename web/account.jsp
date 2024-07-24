@@ -22,6 +22,9 @@
     </head>
 
     <style>
+        body{
+            background-color: #d9edf7;
+        }
         a.back-to-home {
             display: inline-block;
             padding: 10px 20px;

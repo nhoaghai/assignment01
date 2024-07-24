@@ -73,5 +73,4 @@ public class AddToCart extends HttpServlet {
         }
         response.sendRedirect("home");
     }
-
 }
